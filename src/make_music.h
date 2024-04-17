@@ -3,6 +3,7 @@
 #include "lua_extra.h"
 #include <vector>
 #include <iostream>
+#include <cstring> // Para a função memcpy
 
 #include "sndfile/sndfile.h"
 #include <SFML/Audio.hpp>
@@ -41,6 +42,7 @@ std::string getTemporaryFileName()
 
 #define SAMPLE_RATE (44100)
 #define FRAMES_PER_BUFFER (256)
+
 
 int test_create_song(std::string path)
 {
@@ -107,7 +109,52 @@ void create_music(std::string song_script_path)
     play_song(getTemporaryFileName());
 }
 
-void save_music(std::string output_path){
 
+void save_music(const std::string& outputFilename) {
+    // Abrir o arquivo de áudio de entrada para leitura
+    SF_INFO info;
+    SNDFILE* file = sf_open(getTemporaryFileName().c_str(), SFM_READ, &info);
+    if (!file) {
+        std::cerr << "Erro ao abrir o arquivo de áudio para leitura: " << sf_strerror(nullptr) << std::endl;
+        return;
+    }
+
+    // Criar a estrutura SF_INFO para o arquivo de saída
+    SF_INFO info_out;
+    std::memcpy(&info_out, &info, sizeof(SF_INFO)); // Copiar a estrutura original
+
+    // Abrir o arquivo de áudio de saída para escrita
+    SNDFILE* file_out = sf_open(outputFilename.c_str(), SFM_WRITE, &info_out);
+    if (!file_out) {
+        std::cerr << "Erro ao abrir o arquivo de áudio para escrita: " << sf_strerror(nullptr) << std::endl;
+        sf_close(file); // Fechar o arquivo de entrada
+        return;
+    }
+
+    // Definir o tamanho do buffer de leitura/gravação
+    const int BUFFER_SIZE = 1024;
+    float buffer[BUFFER_SIZE];
+
+    // Ler dados do arquivo de entrada e gravá-los no arquivo de saída
+    sf_count_t read_count;
+    while ((read_count = sf_read_float(file, buffer, BUFFER_SIZE)) > 0) {
+        // Escrever os dados lidos no arquivo de saída
+        sf_count_t write_count = sf_write_float(file_out, buffer, read_count);
+        if (write_count != read_count) {
+            std::cerr << "Erro ao escrever os dados de áudio no arquivo de saída." << std::endl;
+            sf_close(file); // Fechar ambos os arquivos
+            sf_close(file_out);
+            return;
+        }
+    }
+
+    // Fechar os arquivos de áudio
+    sf_close(file);
+    sf_close(file_out);
+
+    std::cout << "Arquivo de áudio salvo com sucesso: " << outputFilename << std::endl;
 }
+
+
+
 

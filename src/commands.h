@@ -28,6 +28,5 @@ void play(std::string song_script_path){
 
 void output(std::string output_path){
     std::cout << "compiling to: " << output_path << std::endl;
-    save_music(output_path)
-    
+    save_music(output_path);
 }   

@@ -2,7 +2,7 @@ require("math")
 
 SAMPLE_RATE = 44100
 FRAMES_PER_BUFFER = 256
-DURATION_IN_SECONDS = 3
+DURATION_IN_SECONDS = 2
 
 
 
@@ -64,11 +64,11 @@ end
 charging = false
 
 function PLAY(no_sample, time)
+    time = time + 2
+
     local volume = 0.5 + (time / 2)
     local frequency_hz = 440 + (440 * time)
     local tri_wave = mix_waveforms(no_sample, triangular_wave(time * frequency_hz), time * frequency_hz,
         triangular_wave((time * frequency_hz) - (frequency_hz / 2)), (time * frequency_hz) - (frequency_hz / 2))
-    local noise = random_noise() * (0.5 * time)
-    local tri_noise = mix_waveforms(no_sample, tri_wave, frequency_hz, noise, frequency_hz)
-    return volume * tri_noise
+    return volume * tri_wave
 end

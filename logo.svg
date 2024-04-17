@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100mm"
+   height="100mm"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="../../../bitmap.png"
+   inkscape:export-xdpi="24.383999"
+   inkscape:export-ydpi="24.383999"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.4093294"
+     inkscape:cx="57.474143"
+     inkscape:cy="223.86534"
+     inkscape:window-width="2560"
+     inkscape:window-height="995"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <rect
+       x="61.482207"
+       y="52.104456"
+       width="267.33958"
+       height="260.882"
+       id="rect4" />
+  </defs>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <circle
+       style="fill:#3a00ff;stroke:none;stroke-width:10.455;stroke-linecap:round;stroke-miterlimit:1;stroke-opacity:0.995178;fill-opacity:1"
+       id="path1"
+       cx="50.253639"
+       cy="49.919559"
+       r="49.346199" />
+    <ellipse
+       style="fill:#2800b1;fill-opacity:1;stroke:none;stroke-width:8.43007;stroke-linecap:round;stroke-miterlimit:1;stroke-opacity:0.995178"
+       id="path1-5"
+       cx="50.107315"
+       cy="50.222351"
+       rx="39.565521"
+       ry="40.012959"
+       inkscape:transform-center-x="-1.7547169"
+       inkscape:transform-center-y="3.3235373" />
+    <ellipse
+       style="fill:#20008b;fill-opacity:1;stroke:none;stroke-width:6.39571;stroke-linecap:round;stroke-miterlimit:1;stroke-opacity:0.995178"
+       id="path1-5-2"
+       cx="51.430874"
+       cy="49.168533"
+       rx="29.989134"
+       ry="30.385672"
+       inkscape:transform-center-x="-1.330007"
+       inkscape:transform-center-y="2.5238773" />
+    <ellipse
+       style="fill:#19006c;fill-opacity:1;stroke:none;stroke-width:4.42027;stroke-linecap:round;stroke-miterlimit:1;stroke-opacity:0.995178"
+       id="path1-5-2-7"
+       cx="51.264122"
+       cy="49.031021"
+       rx="21.259756"
+       ry="20.473621"
+       inkscape:transform-center-x="-0.94286278"
+       inkscape:transform-center-y="1.7005689" />
+    <text
+       xml:space="preserve"
+       transform="matrix(3.0408577,0,0,7.2708133,-184.78973,-348.88396)"
+       id="text4"
+       style="font-size:5.33333px;font-family:'Linux Libertine Initials O';-inkscape-font-specification:'Linux Libertine Initials O, Normal';white-space:pre;shape-inside:url(#rect4);display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:39.515;stroke-linecap:round;stroke-miterlimit:1;stroke-opacity:0.995178"><tspan
+         x="61.482422"
+         y="56.822263"
+         id="tspan1">Lunar Wave</tspan></text>
+  </g>
+</svg>

@@ -116,13 +116,14 @@ void create_music(std::string song_script_path)
         {
             lua_getglobal(L, "PLAY");
             lua_pushnumber(L, i);
-            lua_pushnumber(L, i / sample_rate);
+            lua_pushnumber(L, (lua_Number)i / (lua_Number)sample_rate);
 
             if (lua_pcall(L, 2, 1, 0) != LUA_OK)
             {
                 // Se houver um erro ao chamar a função Lua, imprima o erro e saia
                 const char *errorMessage = lua_tostring(L, -1);
-                std::cerr << "Error PLAY function not found" << std::endl;
+                std::cout << "Error PLAY function not found" << std::endl;
+                std::cerr << errorMessage << std::endl;
                 lua_close(L);
             }
             lua_Number ret = std::max(std::min(lua_tonumber(L, -1),1.0),0.0);

@@ -17,10 +17,6 @@ LunarWave é uma ferramenta de código aberto projetada para proporcionar uma ex
 
 Veja como é fácil criar uma onda senoidal simples em Lua usando o LunarWave:
 
-```shell
-    ./build/lunarwave ./test/basics.lua -o basics.wav
-```
-
 ```lua
 function PLAY(no_sample, time,frequency_hz)
     local cycles = time * frequency_hz
@@ -35,4 +31,8 @@ function PLAY(no_sample, time,frequency_hz)
         return -1
     end
 end
+```
+
+```shell
+    ./build/lunarwave ./test/basics.lua -o basics.wav
 ```

@@ -73,9 +73,9 @@ function PLAY(no_sample, time)
     time = time + 0.5
 
     local volume = 0.5 + (time / 2)
-    local frequency_hz = 440 + (440 * time)
+    local frequency_hz = 770 + (110 * time)
     local tri_wave = triangular_wave(time * frequency_hz)
-    local noise = random_noise() * (0.5 * time)
+    local noise = (random_noise() + 0.5) * (0.5 * time)
     local tri_noise = mix_waveforms(no_sample, tri_wave,frequency_hz, noise,frequency_hz)
     return volume * tri_noise
 

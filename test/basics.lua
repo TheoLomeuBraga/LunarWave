@@ -2,7 +2,7 @@ require("math")
 
 SAMPLE_RATE = 44100
 FRAMES_PER_BUFFER = 256
-DURATION_IN_SECONDS = 8
+DURATION_IN_SECONDS = 9
 
 
 
@@ -93,11 +93,18 @@ function mix_waveforms(no_sample, time_a,frequency_a, time_b,frequency_b)
     return mixed_value
 end
 
+function change_precision(v,precision)
+    return math.floor(v * precision) / precision
+end
 
-local custom_wave_patern = {1,0,0}
+
+
 function PLAY(no_sample, time)
-    
-    
+    local custom_wave_patern = {}
+    for i = 1, 3, 1 do
+        table.insert(custom_wave_patern,math.random())
+    end
+
     if time < 1 then
         return square_wave(time * 220)
     elseif time < 2 then
@@ -119,8 +126,10 @@ function PLAY(no_sample, time)
         local stwavef = 440
         return mix_waveforms(no_sample,twave,twavef,stwave,stwavef)
     elseif time < 7 then
-        return custom_wave(time * 660,custom_wave_patern)
+        return change_precision(sine_wave(time * 330),3)
     elseif time < 8 then
+        return custom_wave(time * 660,custom_wave_patern)
+    elseif time < 9 then
         return random_noise()
     end
     return 0

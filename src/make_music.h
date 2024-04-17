@@ -49,6 +49,7 @@ const unsigned int FRAMES_PER_BUFFER = 256;
 
 sf::SoundBuffer buffer;
 sf::Sound sound;
+bool wait_to_song_end = false;
 
 int play_song(std::string path = getTemporaryFileName())
 {
@@ -60,6 +61,8 @@ int play_song(std::string path = getTemporaryFileName())
 
     sound.setBuffer(buffer);
     sound.play();
+
+    wait_to_song_end = true;
 
     return 0;
 }

@@ -35,7 +35,10 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    while (sound.getStatus() == sf::Sound::Playing) {}
+    if(wait_to_song_end){
+        while (sound.getStatus() == sf::Sound::Playing) {}
+    }
+    
 
     return 0;
 }

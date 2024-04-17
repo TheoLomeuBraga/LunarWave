@@ -1,24 +1,24 @@
-# Bem-vindo ao LunarWave!
+# Welcome to LunarWave!
 
-LunarWave é uma poderosa ferramenta para criação de amostras de áudio utilizando Lua. Com LunarWave, você pode criar facilmente uma variedade de formas de onda sonora e explorar a magia da música de uma maneira totalmente nova!
+LunarWave is a powerful tool for creating audio samples using Lua. With LunarWave, you can easily create a variety of sound waveforms and explore the magic of music in a whole new way!
 
-## Sobre o LunarWave
+## About LunarWave
 
-LunarWave é uma ferramenta de código aberto projetada para proporcionar uma experiência simples e acessível na criação de amostras de áudio. Desenvolvido com Lua, uma linguagem de programação poderosa e fácil de aprender, LunarWave capacita os usuários a expressarem sua criatividade musical de forma única e intuitiva.
+LunarWave is an open-source tool designed to provide a simple and accessible experience in audio sample creation. Developed with Lua, a powerful and easy-to-learn programming language, LunarWave empowers users to express their musical creativity in a unique and intuitive way.
 
-### Principais recursos:
+### Key features:
 
-- **Crie facilmente**: Use Lua para gerar uma variedade de formas de onda sonora, incluindo seno, quadrada, triangular, dente de serra e muito mais.
-- **Flexibilidade total**: Ajuste parâmetros como frequência, amplitude e duração para criar o som perfeito.
-- **Ampla compatibilidade**: Exporte suas amostras de áudio para uma variedade de formatos populares, como WAV, MP3 e OGG.
-- **Totalmente personalizável**: Adapte o código-fonte do LunarWave às suas necessidades específicas e adicione novos recursos com facilidade.
+- **Easily Create**: Use Lua to generate a variety of sound waveforms, including sine, square, triangular, sawtooth, and more.
+- **Total Flexibility**: Adjust parameters such as frequency, amplitude, and duration to create the perfect sound.
+- **Wide Compatibility**: Export your audio samples to a variety of popular formats, such as WAV, MP3, and OGG.
+- **Fully Customizable**: Adapt the LunarWave source code to your specific needs and add new features with ease.
 
-## Exemplo de Uso
+## Usage Example
 
-Veja como é fácil criar uma onda senoidal simples em Lua usando o LunarWave:
+See how easy it is to create a simple sine wave in Lua using LunarWave:
 
 ```lua
-function PLAY(no_sample, time,frequency_hz)
+function PLAY(no_sample, time, frequency_hz)
     local cycles = time * frequency_hz
 
     local position = no_sample / SAMPLE_RATE * frequency_hz
@@ -32,6 +32,8 @@ function PLAY(no_sample, time,frequency_hz)
     end
 end
 ```
+
+Here's how you can run this script.
 
 ```shell
     ./build/lunarwave ./test/basics.lua -o basics.wav

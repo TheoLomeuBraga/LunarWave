@@ -1,8 +1,8 @@
 SAMPLE_RATE = 44100
 FRAMES_PER_BUFFER = 256
-FREQUENCY_HZ = 440
 DURATION_IN_SECONDS = 4
 
+local FREQUENCY_HZ = 440
 function square_wave(no_sample, time)
     local cycles = time * FREQUENCY_HZ
     

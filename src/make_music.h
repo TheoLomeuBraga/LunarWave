@@ -90,7 +90,6 @@ void create_music(std::string song_script_path)
 
     unsigned int sample_rate = get_luanumber(L, "SAMPLE_RATE");
     unsigned int frames_per_buffer = get_luanumber(L, "FRAMES_PER_BUFFER");
-    int frequency_hz = get_luanumber(L, "FREQUENCY_HZ");
     lua_Number duration_in_seconds = get_luanumber(L, "DURATION_IN_SECONDS");
 
     
@@ -100,9 +99,6 @@ void create_music(std::string song_script_path)
         fileInfo.samplerate = sample_rate;                  // Taxa de amostragem
         fileInfo.channels = 1;                              // Número de canais (monofônico)
         fileInfo.format = SF_FORMAT_WAV | SF_FORMAT_PCM_16; // Formato de áudio (WAV, 16 bits PCM)
-
-        const int FREQUENCY_HZ = 440;
-        const lua_Number duration_seconds = 1;
 
         SNDFILE *sndFile = sf_open(getTemporaryFileName().c_str(), SFM_WRITE, &fileInfo);
         if (!sndFile)

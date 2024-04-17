@@ -59,13 +59,13 @@ function random_noise()
     return math.random() * 2 - 1
 end
 
-function mix_waveforms(no_sample, amplitude_a,frequency_a, amplitude_b,frequency_b)
+function mix_waveforms(no_sample, time_a,frequency_a, time_b,frequency_b)
 
     local position_tri = no_sample / SAMPLE_RATE * frequency_a
     local position_saw = no_sample / SAMPLE_RATE * frequency_b
 
-    local mixed_value = amplitude_a * (2 / math.pi) * math.asin(math.sin(2 * math.pi * position_tri))
-                       + amplitude_b * (position_saw - math.floor(position_saw + 0.5))
+    local mixed_value = time_a * (2 / math.pi) * math.asin(math.sin(2 * math.pi * position_tri))
+                       + time_b * (position_saw - math.floor(position_saw + 0.5))
 
     return mixed_value
 end

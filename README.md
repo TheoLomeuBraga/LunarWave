@@ -1,5 +1,7 @@
 # Welcome to LunarWave!
 
+<img src="logo.svg" alt="Ícone SVG">
+
 LunarWave is a powerful tool for creating audio samples using Lua. With LunarWave, you can easily create a variety of sound waveforms and explore the magic of music in a whole new way!
 
 ## About LunarWave

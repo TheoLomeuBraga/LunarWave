@@ -1,0 +1,1 @@
+./build/lunarwave ./test/test.lua -o test.wav

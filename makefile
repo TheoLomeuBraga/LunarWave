@@ -1,6 +1,6 @@
 include = -I./src -I./include 
 libs = -lsndfile -lsfml-audio -lsfml-system
-version = -DVERSION=\"beta\"
+version = -DVERSION=\"1.0\"
 output_file = build/lunarwave
 
 

@@ -2,11 +2,11 @@ SAMPLE_RATE = 44100
 FRAMES_PER_BUFFER = 256
 DURATION_IN_SECONDS = 4
 
-local FREQUENCY_HZ = 440
+local frequency_hz = 440
 function square_wave(no_sample, time)
-    local cycles = time * FREQUENCY_HZ
+    local cycles = time * frequency_hz
     
-    local position = no_sample / SAMPLE_RATE * FREQUENCY_HZ
+    local position = no_sample / SAMPLE_RATE * frequency_hz
     
     local is_positive = (position % 1) < 0.5
     

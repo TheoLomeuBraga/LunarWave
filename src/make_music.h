@@ -14,6 +14,8 @@
 #include <windows.h>
 #include <string>
 
+
+
 std::string getTemporaryFileName()
 {
     char tempDir[MAX_PATH];
@@ -23,7 +25,7 @@ std::string getTemporaryFileName()
         // Erro ao obter o diretório temporário
         return "";
     }
-    string(tempDir) + "/temporary_lunarwave.wav";
+    return std::string(tempDir) + "/temporary_lunarwave.wav";
 }
 #else
 #include <cstdlib> // Para std::getenv

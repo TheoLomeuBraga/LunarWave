@@ -95,9 +95,7 @@ void create_music(std::string song_script_path)
     lua_State *L = luaL_newstate();
     luaL_openlibs(L);
 
-    
     test_create_song(getTemporaryFileName());
-    
 
     if (luaL_loadfile(L, song_script_path.c_str()) || lua_pcall(L, 0, 0, 0))
     {

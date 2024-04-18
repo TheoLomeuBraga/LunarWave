@@ -17,8 +17,6 @@ LunarWave is an open-source tool designed to provide a simple and accessible exp
 
 ## Usage Example
 
-
-
 See how easy it is to create a simple sine wave in Lua using LunarWave:
 
 ```lua

@@ -82,6 +82,17 @@ function random_noise()
     return math.random() * 2 - 1
 end
 
+function noise(t, cutoff_frequency)
+    -- Gere um valor aleatório entre -1 e 1
+    local noise = math.random() * 2 - 1
+    
+    -- Ajuste a frequência de corte para controlar a tonalidade do ruído
+    local filter_factor = math.exp(-cutoff_frequency * t)
+    noise = noise * filter_factor
+    
+    return noise
+end
+
 function stuffy_noise(stuffy_power)
     return (math.min(1,math.random() * stuffy_power) * 2) - 1
 end
@@ -105,12 +116,12 @@ end
 
 function PLAY(no_sample, time)
     time = time % 1
-    local volume = sine_wave(time * 2)
-    if volume > 0.5 then
+    local volume = sine_wave(time)
+    if volume >= 0.8 then
         volume = 1
     else
         volume = 0
     end
-    local step_sound = stuffy_noise(16) * 2 + square_wave(220) / 3
+    local step_sound =  noise(time, 7) * 2
     return step_sound * volume
 end

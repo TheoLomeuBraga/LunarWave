@@ -82,6 +82,17 @@ function random_noise()
     return math.random() * 2 - 1
 end
 
+function noise(t, cutoff_frequency)
+    -- Gere um valor aleatório entre -1 e 1
+    local noise = math.random() * 2 - 1
+    
+    -- Ajuste a frequência de corte para controlar a tonalidade do ruído
+    local filter_factor = math.exp(-cutoff_frequency * t)
+    noise = noise * filter_factor
+    
+    return noise
+end
+
 function mix_waveforms(no_sample, time_a,frequency_a, time_b,frequency_b)
 
     local position_tri = no_sample / SAMPLE_RATE * frequency_a
@@ -128,7 +139,7 @@ function PLAY(no_sample, time)
     elseif time < 7 then
         return change_precision(sine_wave(time * 330),3)
     elseif time < 8 then
-        return custom_wave(time * 660,custom_wave_patern)
+        return noise(time, 10)
     elseif time < 9 then
         return random_noise()
     end
